@@ -17,7 +17,7 @@ pipeline{
                     set -e  # Detener el script si ocurre un error
                     cd /home/administrator/node-production
                     if [ ! -d "nueva-carpeta-desde-jenkins" ]; then
-                        mkdir nueva-carpeta-desde-jenkins
+                        sudo mkdir nueva-carpeta-desde-jenkins
                     fi
                 '''
             }
