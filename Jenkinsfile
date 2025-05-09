@@ -11,5 +11,12 @@ pipeline{
                 echo 'Ejecutando tests'
             }
         }
+        stage ('Deploy'){
+            steps{
+                sh 'pwd'
+                sh 'cd /home/administrator/node-production'
+                sh 'mkdir nueva-carpeta-desde-jenkins'
+            }
+        }
     }
 }
