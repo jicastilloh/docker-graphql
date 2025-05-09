@@ -13,9 +13,13 @@ pipeline{
         }
         stage ('Deploy'){
             steps{
-                sh 'pwd'
-                sh 'cd /home/administrator/node-production'
-                sh 'mkdir nueva-carpeta-desde-jenkins'
+                sh '''
+                    set -e  # Detener el script si ocurre un error
+                    cd /home/administrator/node-production
+                    if [ ! -d "nueva-carpeta-desde-jenkins" ]; then
+                        mkdir nueva-carpeta-desde-jenkins
+                    fi
+                '''
             }
         }
     }
